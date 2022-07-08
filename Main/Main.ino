@@ -8,7 +8,7 @@
 #define SCREEN_HEIGHT 32
 #define OLED_RESET     4
 #define SCREEN_ADDRESS 0x3C
-#define SSD1306_NO_SPLASH;
+#define SSD1306_NO_SPLASH
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
