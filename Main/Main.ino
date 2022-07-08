@@ -19,8 +19,8 @@ int motorPinRV = 16; //Rechterwiel vooruit
 int motorPinRA = 17; //Rechterwiel achteruit
 
 // IR config
-int IRPinR = 34;// IR pin rechts
-int IRPinL = 39;// IR pin links
+int ldrRight = 34;
+int ldrLeft = 39;
 int pinR = 0;
 int pinL = 0;
 int colorThreshold = 2700;
@@ -54,13 +54,13 @@ void loop(){
 
   // reset cursor to top right corner of the screen.
   display.setCursor(0,0);
-  display.println("PinR: " + String(analogRead(IRPinR)));
-  display.println("PinR: " + String(analogRead(IRPinL)));
+  display.println("PinR: " + String(analogRead(ldrRight)));
+  display.println("PinR: " + String(analogRead(ldrLeft)));
   display.display();
   
   //Read the IR pins
-  int pinL = analogRead(IRPinL) / colorThreshold;
-  int pinR = analogRead(IRPinR) / colorThreshold;
+  int pinR = analogRead(ldrRight) / colorThreshold;
+  int pinL = analogRead(ldrLeft) / colorThreshold;
 
     //if both pins reaches the threshold, stop the robot from moving.
   if(pinL >= 1 && pinR >= 1){
